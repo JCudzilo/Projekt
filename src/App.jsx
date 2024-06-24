@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AuthorsList } from "./components/AuthorsList";
+import { AddAuthor } from "./components/AddAuthor";
 
 const API_URL = "http://localhost:8000";
 
@@ -18,6 +19,30 @@ function App() {
         });
       };
 
+      const onAddAuthorSubmitHandler = (event) => {
+        event.preventDefault();
+    
+        const name = event.target.name.value;
+        const surname = event.target.surname.value;
+    
+        fetch(`${API_URL}/authors`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            surname,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.id) {
+              setAuthor((prevAuthors) => [...prevAuthors, data]);
+            }
+          });
+      };
+
     useEffect(() => {
         fetch(`${API_URL}/authors`)
           .then((res) => res.json())
@@ -26,7 +51,8 @@ function App() {
     
     return (
         <>
-          <h1>authors App</h1>
+          <h1>Authors App</h1>
+          <AddAuthor onAdd={onAddAuthorSubmitHandler} />
           <AuthorsList authors={authors} onDelete={onDeleteAuthorClickHandler}/>
         </>
       );
