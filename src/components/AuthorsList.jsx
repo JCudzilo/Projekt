@@ -1,4 +1,4 @@
-export const AuthorsList = ({ authors = []}) => (
+export const AuthorsList = ({ authors = [], onDelete }) => (
     <table>
       <thead>
         <tr>
@@ -11,6 +11,9 @@ export const AuthorsList = ({ authors = []}) => (
           <tr key={author.id}>
             <td>{author.name}</td>
             <td>{author.surname}</td>
+            <td>
+            <button onClick={() => onDelete(author.id)}>Delete</button>
+          </td>
           </tr>
         ))}
       </tbody>
