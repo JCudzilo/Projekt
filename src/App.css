@@ -1,0 +1,61 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+form, legend{
+  text-align: left;
+}
+
+fieldset{
+  border-radius: 8px;
+}
+
+label{
+  font-weight: bold;
+  margin: 5px 5px;
+}
+
+input{
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+tr {
+  border-bottom: 1px solid lightgray;
+}
+
+th, td{
+  padding-right: 100px;
+}
+
+button{
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  margin: 5px 5px;
+}
+
+.add{
+  background-color: green;
+}
+
+.delete{
+  background-color: red;
+}
+

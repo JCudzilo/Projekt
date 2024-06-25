@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AuthorsList } from "./components/AuthorsList";
 import { AddAuthor } from "./components/AddAuthor";
+import "./App.css"
 
 const API_URL = "http://localhost:8000";
 

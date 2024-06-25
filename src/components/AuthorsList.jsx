@@ -12,7 +12,7 @@ export const AuthorsList = ({ authors = [], onDelete }) => (
             <td>{author.name}</td>
             <td>{author.surname}</td>
             <td>
-            <button onClick={() => onDelete(author.id)}>Delete</button>
+            <button className="delete" onClick={() => onDelete(author.id)}>Delete</button>
           </td>
           </tr>
         ))}
